@@ -86,7 +86,7 @@ After extracting the files,
 ## License
 > MIT License
 
-Copyright (c) 2019 Brian
+Copyright (c) 2019 Ndichu Brian
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
