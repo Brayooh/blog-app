@@ -5,8 +5,7 @@ from PIL import Image
 from flask import render_template, url_for, redirect, request, flash, abort
 from flask_login import current_user, login_required
 
-from app import app
-from app import db
+from .. import db
 from app.main import main
 from app.main.forms import UpdateAccountForm, PostForm
 from app.models import Post, Clap, Comment
