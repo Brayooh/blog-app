@@ -6,7 +6,6 @@ ld()
 
 
 class Config:
-    debug = True
     # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://brayooh:brian@localhost/blog'
     SECRET_KEY = 'qwertyuiop'
@@ -15,8 +14,17 @@ class Config:
     SENDGRID_API_KEY=os.environ.get('SENDGRID_API_KEY')
     DEFAULT_SENDGRID_SENDER =  os.environ.get('DEFAULT_SENDGRID_SENDER')
 
+    debug = True
+    
     #  email configurations
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465
     MAIL_USE_TLS = False
     MAIL_USE_SSL = True
+
+class ProdConfig(Config):
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+
+
+class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI = "postgresql://brayooh:brian@localhost/pitch"
