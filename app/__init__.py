@@ -8,7 +8,7 @@ from config import Config
 
 db = SQLAlchemy()
 login_manager = LoginManager()
-login_manager.init_app(app)
+
 bootstrap = Bootstrap()
 mail = Mail()
 login_manager.login_view = 'auth.login'
@@ -20,6 +20,7 @@ def create_app(Config_name):
     app = Flask(__name__)
 
     app.config.from_object(Config_options[Config_name])
+    login_manager.init_app(app)
     from .auth import auth as auth_blueprint
     from .main import main as main_blueprint
     app.register_blueprint(auth_blueprint)
