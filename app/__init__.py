@@ -8,7 +8,7 @@ from config import Config
 
 db = SQLAlchemy()
 login_manager = LoginManager()
-login_manager.init_app()
+login_manager.init_app(app)
 bootstrap = Bootstrap()
 mail = Mail()
 login_manager.login_view = 'auth.login'
