@@ -3,8 +3,7 @@ from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
-
-from config import Config_options
+from config import Config
 
 
 db = SQLAlchemy()
@@ -19,7 +18,7 @@ login_manager.login_message_category = 'info'
 
 def create_app(Config_name):
     app = Flask(__name__)
-    
+
     app.config.from_object(Config_options[Config_name])
     from .auth import auth as auth_blueprint
     from .main import main as main_blueprint

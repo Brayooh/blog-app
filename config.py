@@ -15,7 +15,7 @@ class Config:
     DEFAULT_SENDGRID_SENDER =  os.environ.get('DEFAULT_SENDGRID_SENDER')
 
     debug = True
-    
+
     #  email configurations
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465
@@ -28,3 +28,8 @@ class ProdConfig(Config):
 
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = "postgresql://brayooh:brian@localhost/pitch"
+
+config_options = {
+   'development': DevConfig,
+   'production': ProdConfig,
+}
