@@ -126,4 +126,3 @@ def comment(post_id):
     new_comment.save()
     return redirect(url_for('main.mypost', post_id=post_id))
 
-
