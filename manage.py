@@ -18,5 +18,5 @@ def add_shell_context():
     return {'db': db, 'User': User}
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':                                                                                                                                 
     manager.run()

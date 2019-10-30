@@ -5,7 +5,8 @@ from PIL import Image
 from flask import render_template, url_for, redirect, request, flash, abort
 from flask_login import current_user, login_required
 
-from .. import db
+
+from app import db
 from app.main import main
 from app.main.forms import UpdateAccountForm, PostForm
 from app.models import Post, Clap, Comment
@@ -124,4 +125,5 @@ def comment(post_id):
     new_comment = Comment(comment=comment, user_id=current_user._get_current_object().id, post_id=post_id)
     new_comment.save()
     return redirect(url_for('main.mypost', post_id=post_id))
+
 
